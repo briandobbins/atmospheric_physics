@@ -97,12 +97,12 @@ module coords_1d
     
       section = allocate_coords(n_bnds(2)-n_bnds(1)+1, d_bnds(2)-d_bnds(1)+1)
     
-      section%ifc = self%ifc(n_bnds(1):n_bnds(2),d_bnds(1):d_bnds(2)+1)
-      section%mid = self%mid(n_bnds(1):n_bnds(2),d_bnds(1):d_bnds(2))
-      section%del = self%del(n_bnds(1):n_bnds(2),d_bnds(1):d_bnds(2))
-      section%dst = self%dst(n_bnds(1):n_bnds(2),d_bnds(1):d_bnds(2)-1)
-      section%rdel = self%rdel(n_bnds(1):n_bnds(2),d_bnds(1):d_bnds(2))
-      section%rdst = self%rdst(n_bnds(1):n_bnds(2),d_bnds(1):d_bnds(2)-1)
+      section%ifc(:,:) = self%ifc(n_bnds(1):n_bnds(2),d_bnds(1):d_bnds(2)+1)
+      section%mid(:,:) = self%mid(n_bnds(1):n_bnds(2),d_bnds(1):d_bnds(2))
+      section%del(:,:) = self%del(n_bnds(1):n_bnds(2),d_bnds(1):d_bnds(2))
+      section%dst(:,:) = self%dst(n_bnds(1):n_bnds(2),d_bnds(1):d_bnds(2)-1)
+      section%rdel(:,:) = self%rdel(n_bnds(1):n_bnds(2),d_bnds(1):d_bnds(2))
+      section%rdst(:,:) = self%rdst(n_bnds(1):n_bnds(2),d_bnds(1):d_bnds(2)-1)
     
     end function section
     
@@ -149,4 +149,3 @@ module coords_1d
     end subroutine finalize
     
 end module coords_1d
-    
