@@ -825,6 +825,7 @@ contains
     ubi(:, 1) = ubm(:, 1)
 
     ubi(:, 2:pver) = midpoint_interp(ubm)
+    ubi(:, pver + 1) = ubm(:, pver)
 
     !-----------------------------------------------------------------------
     ! Calculate heating depth.
